@@ -15,12 +15,14 @@ let swiper_1 = new Swiper('.slider-container', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
+  
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
     autoplay: {
       delay: 4000,
+      disableOnInteraction: false,
     },
     navigation: {
       nextEl: '.swiper-button-next',
