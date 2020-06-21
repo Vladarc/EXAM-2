@@ -29,7 +29,7 @@ function initMap() {
     let lat   =  40.671094,
         lng   =  -73.909877,
         icon  = {
-          url        : '../img/marker.png',
+          url        : '/img/marker.png',
           scaledSize : new google.maps.Size(80, 80),
           origin     : new google.maps.Point(0,0), 
           anchor     : new google.maps.Point(0, 0) 
