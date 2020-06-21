@@ -1,0 +1,52 @@
+.news-card{
+    margin-top: 20px;
+    max-width: 370px;
+    width: 100%;
+    height: 510px;
+    display: block;
+    position: relative;
+    background-color: $secondary-color;
+   
+
+    &_content{
+        padding: 10px 15px 20px;
+    }
+    &_title{
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+    }
+    &_text{
+        color:$body-color ;
+        font-size: 1.6rem;
+        max-height: 81px;
+        overflow: hidden;
+        @media screen and (min-width:450px){
+            max-height: 87px;
+            }
+    }
+}
+
+.author{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    &__wrap{
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+   &__description{
+       padding-left: 15px;
+   }
+   &__name{
+       margin: 0;
+       text-transform: uppercase;
+   }
+   &__date{
+       color: $light-blue ;
+       font-family: $secondary-ff ;
+   }
+}

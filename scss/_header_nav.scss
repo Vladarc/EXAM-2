@@ -1,0 +1,224 @@
+
+
+.nav{
+    z-index: 10;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--active-bg {
+        padding-top: 5px;
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,.6) 55%);
+        border-radius: 20px;
+     }
+    @media screen and (min-width:900px) {
+        top: 15px;
+       
+        max-width: 1185px;
+        margin: 0 auto;
+
+        .no-flexboxlegacy & {
+            width: 1185px;
+        }
+        &--active-bg {
+          
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,.6) 55%);
+            border-radius: 20px;
+         }
+    }
+    &__logo{
+        margin: 0;
+        line-height: 1;
+    }
+    &__img {
+        max-width: 200px;
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        padding: 0;
+        margin: 0;
+        background-image: linear-gradient(45deg, #55b7ff, #7e5aff);
+        width: 100vw;
+        height: 100vh;
+
+        list-style: none;
+       
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        will-change: transfrom;
+        z-index: -2;
+        transform: scale(0);
+        opacity: 0;
+
+        .opened &  {
+            z-index: 5;
+            transform: scale(1);
+            opacity: 1;
+        }
+    
+        @media screen and (min-width:900px) {
+            position: relative; 
+            z-index: 1;
+            transform: scale(1);
+            opacity: 1;
+            background-image:none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+            width: auto;
+            height: auto;
+           
+          &_item + &_item {
+                margin-left: 40px;
+                @media screen and (min-width:1185px) {
+                    margin-left: 90px;
+                }
+          }  
+        }
+
+       &_item {
+        @media screen and (min-width:900px) {
+            position: relative;
+            &:not(:last-of-type){
+                padding-left:10px ;
+            }
+
+            &:not(:last-of-type)::after{
+               content: "";
+               @include posA($top:50%,$left:-10px,$delta_x:-50%,$delta_y:-50%);
+               
+               width: 10px;
+               height: 10px;
+               border: $border-width solid $secondary-color;
+               background-color: transparent;
+               border-radius: 50%;
+               
+            }
+           
+        }  
+      
+        
+        
+        @include hover (){
+
+            &:after{
+                transition:background-color .3s ;
+                background-color: $secondary-color;
+            }
+        }
+
+       }
+
+        &_item:last-of-type {
+            margin-top: 30px;
+            @media screen and (min-width:900px) {
+                margin: 0 0 0 15px ;
+            }
+            @media screen and (min-width:1185px) {
+                margin: 0 0 0 90px ;
+            }
+
+        }
+        &_link{
+            text-transform: uppercase;
+            color: $secondary-color;
+            @include font($secondary-ff,2rem,$fc:$secondary-color,$lh:1.7);
+            @media screen and (min-width:900px) {
+                font-size: 1.4rem;
+            }
+        }
+
+    }
+}
+
+.nav__menu_item-active:before{
+    content: "";
+    @include posA($top:50%,$left:-10px,$delta_x:-50%,$delta_y:-50%);
+    
+    width: 10px;
+    height: 10px;
+    border: $border-width solid $secondary-color;
+    background-color: $secondary-color;
+    border-radius: 50%;
+}   
+
+
+.mobileMenu{
+    display: block;
+    z-index: 10;
+    padding: 0 10px 0 10px;
+   
+    @media screen and (min-width:900px){
+        display: none;
+    }
+  & span{
+      position: relative;
+      width: 35px;
+      height: 5px;
+      background: $secondary-color;
+      display: block;
+      transition: .5s;
+      margin-bottom: 8px;
+  
+         &:nth-child(1){
+            transform-origin: left;
+        }
+         &:nth-child(2){
+            transform-origin: center;
+        }
+         &:nth-child(3){
+            transform-origin: left;
+        }
+        .opened  & {
+            background:#fff;
+            border-radius: 50%;
+        }
+        .opened &:nth-child(1){
+           transform: rotate(45deg);
+           top: 2.5px;
+           left: 2px;
+       
+        }
+        .opened &:nth-child(2){
+           transform: rotate(315deg);
+           top: 1px;
+           right:3px;
+          
+        }
+        .opened &:nth-child(3){
+            transform: scaleX(0);
+        }
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

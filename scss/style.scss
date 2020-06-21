@@ -1,0 +1,509 @@
+
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'slider';
+@import 'socials';
+
+
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body{
+@include font($body-ff,1.4rem,$fc:$body-color,$lh:1.7);
+background-color: $body-bg;
+}
+.container{
+    margin: 0 auto;
+    padding:0  15px;
+    max-width: 1185px;
+ 
+    
+}
+img{
+    max-width: 100%;
+}
+a,button{
+    text-decoration: none;
+    @include tr;
+}   
+h2,h3,h4{
+    
+    color: $primary-color;
+}
+.bg-image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover ;
+}
+.section {
+    min-height: 100vh;
+    &:not(:first-of-type):not(.section--map){
+        padding: 40px 0 ;
+        @media screen and (min-width:900px) {
+            padding: 90px 0 ;
+        }
+    }
+   
+
+    &--whatWeDo{
+   
+        background-color: $secondary-color;
+
+        .row + .row {
+            margin-top: 60px;
+            @media screen and (min-width:992px) {
+                margin-top: 160px;
+            }
+        }
+        .row--centered{
+            @media screen and (min-width:992px) {
+               justify-content: space-between;
+            }
+        }
+    }
+
+    &--latestNews,&--map{
+       
+        position: relative;
+    } 
+    
+    &--gallery{
+       
+        background-color: $secondary-color;
+    }
+}
+@import 'header_nav';
+@import 'head';
+
+.title {
+    margin-top: 0;
+    font-family: $title-ff;
+    text-align: center;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 3rem;
+    position: relative;
+    @media screen and (min-width:992px) {
+        font-size: 4.4rem;
+    }
+    &::after {
+        content: '';
+        @include posA(auto);
+        width: 100px ;
+        height: 1px;
+        background-color: $primary-color;
+    }
+    &--primary{
+        color        : $secondary-color;
+        font-family  : "GothamRegular";
+        font-weight  : 500;
+        &::after{
+            background-color: $secondary-color;
+        }
+    }
+    &--secondary{
+        font-family  : "GothamRegular";
+        font-weight  : 600;
+      
+    }
+    &--mb{
+        margin-bottom: 165px;
+    }
+}
+.row{
+    display: flex;
+    flex-flow: wrap row;
+    @media screen and (min-width:992px) {
+        flex-flow: nowrap row;
+    }
+    &--centered {
+        justify-content: center;
+       
+    }
+    &--reverse {
+        @media screen and (min-width:992px) {
+            flex-direction: row-reverse;
+        }
+       
+    }
+}
+.col {
+    width: 100%;
+
+   
+
+        &--1-6{
+            max-width: 635px;
+        }
+        &--1-5{
+            max-width: 470px;
+        }
+        &--1-4{
+            max-width: 400px;
+        }
+        &--1-3{
+            max-width: 320px ;
+        }
+        &--1-2{
+             max-width: 200px;
+        }
+        
+}   
+.img-wrap{
+    position: relative;
+    padding-top: 80%;
+    overflow: hidden;
+    background-color: $primary-color  ;
+ 
+    &__img {
+        @include posA;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &--primary{
+       @media screen and (min-width:450px){
+        padding-top: 70%;
+       } 
+    }
+    &--secondary {
+        padding-top: 75%; 
+        
+    }
+    &--shadow-bg-right{
+        @media screen and (min-width:750px){
+            box-shadow: -215px -70px #55b7ff;
+        } 
+        @media screen and (min-width:992px) {
+            box-shadow: -215px -30px #55b7ff;
+        }
+        @media screen and (min-width:1250px) {
+            box-shadow: -215px -70px #55b7ff;
+        }
+       
+    }
+    &--shadow-bg-left{
+        @media screen and (min-width:750px){
+            box-shadow: 215px -70px #7e5aff;
+           } 
+           @media screen and (min-width:992px) {
+            box-shadow: 215px -30px #7e5aff;
+            }
+             @media screen and (min-width:1250px) {
+            box-shadow: 215px -70px #7e5aff;
+            }
+    }
+
+  &__hover-item{
+      @include posA();
+      color:$secondary-color;
+      text-align: center;
+      border: $border-width solid $secondary-color;
+      line-height: 55px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      z-index: 3;
+      opacity: 0;
+
+      
+}
+ &--hover{
+     @include hover(){
+        .img-wrap__hover-item{
+            transition: opacity .3s;
+            opacity: 1;
+        } 
+     }
+ }
+
+
+
+
+
+}
+
+.features {
+
+margin-top:25px;
+@media screen and (min-width:650px){
+    text-align: center;
+}
+@media screen and (min-width:992px){
+    text-align: left;
+    padding: 0 15px;
+}
+    &__subtitle{
+        color: $primary-color;
+        text-transform: uppercase;
+        font-family: $secondary-ff;
+        font-size: 2.2rem;
+    }
+    &__title{
+        margin:0;
+        font-size: 3rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+        @media screen and (min-width:992px){
+            font-size: 4.4rem;
+        }
+    }
+    &__text{
+        font-size: 1.8rem;
+    } 
+
+    
+
+
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include font($secondary-ff,1.6rem,$primary-color,400,22px);
+    border:$border-width solid $primary-color  ;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    max-width: 190px;
+    width: 100%;
+    background: transparent;
+    &--primary{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+    @include hover() {
+        background:$primary-color;
+        color:$secondary-color
+    }
+}
+
+.geoMark {
+    display: inline-block;
+    width: 100%;
+    padding: 25px 0;
+    @include font($ff:$body-ff,$fz:1.4rem,$fc:$primary-color,$fw:400,$lh:1);
+    font-style: italic;
+    @media screen and (min-width:992px) {
+        font-size: 1.8rem;
+       
+        & i {
+            transition: transform .3s ease-in-out;
+            will-change: transform;
+        }
+        @include hover(){
+           
+            & i {
+              
+                transform: scale(1.6);
+            }
+        }
+
+    }
+
+    & i {
+        padding-right: 5px;
+    }
+    
+}
+@import 'news_card';
+.view-360{
+    @include posA();
+    opacity: 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-gap:15px;
+    @media screen and (min-width:650px) {
+        grid-template-columns:repeat(2,1fr);
+    }
+    @media screen and (min-width:992px) {
+        grid-template-columns:repeat(4,1fr);
+        margin-bottom: 50px;
+
+        .no-flexboxlegacy &{
+            display: -ms-grid;
+            -ms-grid-columns:285px 10px 285px 10px 285px 10px 285px;
+            -ms-grid-rows:215px 10px 215px
+        }
+    }
+    &-item-lg{
+
+        .no-flexboxlegacy & {
+            -ms-grid-row:1;
+            -ms-grid-row-span:3;
+            -ms-grid-column:1;
+            -ms-grid-column-span:3;
+        }
+        @media screen and (min-width:650px) {
+           grid-column: span 2;
+           grid-row: span 2;
+          
+        }
+        @include hover(){
+            .view-360{
+                transition: opacity .3s;
+                opacity: 1;
+                
+            }
+        }
+     
+    }
+    &-item-sm {
+        .no-flexboxlegacy & { 
+        &_ie-1{
+           
+                -ms-grid-column:5;
+                -ms-grid-row:1;
+            } 
+        
+        &_ie-2 {
+            
+                -ms-grid-column:7;
+                -ms-grid-row:1;
+        }
+        
+        &_ie-3{
+            
+            -ms-grid-column:5;
+            -ms-grid-row:3;     
+        } 
+        
+        &_ie-4{
+            
+            -ms-grid-column:7;
+            -ms-grid-row:3;       
+           
+        }
+    }
+
+       
+    }
+    &-item-lg,
+    &-item-sm{
+       
+        will-change: transform;
+        @include hover(){
+           
+            .img-wrap__img{
+                transition: transform .3s;
+                transform: translate(-50%,-50%) scale(1.1);
+            }
+        }
+    }
+}
+
+
+
+#map{
+    min-height:80vh;
+    width:100%;
+    @media screen and (min-width:650px) {
+        min-height:100vh;
+     }
+}
+
+.contact{
+    background-color: $secondary-color;
+    padding-top: 20px;
+   
+    margin: 0 auto;
+    @media screen and (min-width:650px) {
+        max-width: 540px;
+        position: absolute;
+        bottom: -200px;
+        left: 0;right: 0;
+     }
+     @media screen and (min-width:800px) {
+        max-width:640px;
+        padding: 50px 0;
+        
+       
+        &__item + &__item {
+            margin: 30px 0 0 0;
+        }
+     }
+     @media screen and (min-width:800px) {
+        max-width:770px;
+        .no-flexboxlegacy & {
+            width:770px; 
+        }
+     }
+    &__list { 
+        margin: 0 0 25px 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        @media screen and (min-width:800px) {
+            margin: 0;
+        }
+
+        & > *, a {
+            @include font($ff:$secondary-ff,$fz:1.8rem,$fc:$primary-color,$fw:400,$lh:1.6);
+        }
+        
+    }
+
+    &__item {
+        & > i {
+            color: $medium-violet;
+            padding-right: 5px;
+        }
+
+    }   
+    
+ &__link{
+     @include hover () {
+         transition:  font-weight .1s;
+         font-weight: 600;
+     }
+ }
+
+}
+
+.footer{
+   padding: 40px 0;
+   text-align: center;
+   &__description{
+       color: $secondary-color
+   }
+   @media screen and (min-width:650px) {
+        padding: 210px 0;
+        
+   }
+   @media screen and (min-width:992px) {
+        padding: 230px 0 210px 0;
+        .row {
+            max-width: 770px;
+            justify-content: space-between;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        &__logo{
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+   }
+}
+
+
+
+@import 'form'
+
+
+
+
+

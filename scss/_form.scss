@@ -1,0 +1,65 @@
+.form {
+    text-align: center;
+    padding-bottom: 20px;
+    
+
+    &__field{
+        display: inline-block;
+        max-width: 280px;
+        width: 100%;
+        border: none;
+        border-bottom: $border-width solid rgba($color: $primary-color, $alpha: .5);
+        padding-bottom: 15px;
+        outline: none;
+       
+
+        
+        & + & {
+            margin-top: 25px;
+           
+        }
+
+        &:last-of-type {
+            margin-bottom: 25px;
+            @media screen and (min-width:800px){
+                margin-bottom: 35px;
+            }     
+                
+            
+        }
+
+        &::placeholder{
+            @include font($ff:$secondary-ff,$fz:1.8rem,$fc:$primary-color,$fw:400,$lh:1.6);
+            opacity: .5;
+            text-align: center;
+
+            @media screen and (min-width:800px){
+                text-align: left;
+            }
+            
+        }
+
+        &:focus,
+        &:focus::placeholder{
+            opacity: 1;
+            border-color:$primary-color;
+        }
+
+        
+    }
+&__valid{
+    position: relative;
+    &_check{
+         @include posA(auto,auto,-50%,-50%);
+         bottom: 50%;
+         color:green;
+         font-size: 1.8rem;
+         visibility: hidden;
+    }
+    
+}
+
+&__field:valid ~ &__valid_check{
+    visibility: visible;
+}
+}
