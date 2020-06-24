@@ -62,8 +62,9 @@
         z-index: -2;
         transform: scale(0);
         opacity: 0;
-
+        transition: opacity  .2s ease-out,transform .3s ease-out ;
         .opened &  {
+            transition: opacity  .6s ease-out,transform .4s ease-out ;
             z-index: 5;
             transform: scale(1);
             opacity: 1;
@@ -148,12 +149,12 @@
 .nav__menu_item-active:before{
     content: "";
     @include posA($top:50%,$left:-10px,$delta_x:-50%,$delta_y:-50%);
-    
     width: 10px;
     height: 10px;
     border: $border-width solid $secondary-color;
     background-color: $secondary-color;
     border-radius: 50%;
+  
 }   
 
 
