@@ -12,7 +12,8 @@
     align-items: center;
     &--active-bg {
         padding-top: 5px;
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,.6) 55%);
+        background: linear-gradient(45deg, rgba(85,183,255,0.7) 0%, rgba(126,90,255,0.7) 100%);
+  
         border-radius: 20px;
      }
     @media screen and (min-width:900px) {
@@ -26,7 +27,7 @@
         }
         &--active-bg {
           
-            background-image: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,.6) 55%);
+            background: linear-gradient(45deg, rgba(85,183,255,0.7) 0%, rgba(126,90,255,0.7) 100%);
             border-radius: 20px;
          }
     }
