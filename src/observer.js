@@ -19,8 +19,7 @@ function handler(myelment, observer) {
       'li[data-target="' + isElemt.target.id + '"]'
     );
 
-    console.log(isElemt.intersectionRatio);
-    console.log(isElemt.isIntersecting);
+
     if (isElemt.isIntersecting) {
       navMenuItem.forEach((el) => el.classList.remove("nav__menu_item-active"));
       currentTarget != null
