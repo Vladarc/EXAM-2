@@ -30,19 +30,19 @@
                 </a>
 
                 <ul class="nav__menu">
-                    <li class="nav__menu_item aboutUsLink"><a href="#what-we-do" class="nav__menu_link ">
+                    <li class="nav__menu_item nav__menu_item-active" data-target="head"><a href="#what-we-do" class="nav__menu_link ">
                             About us
                         </a>
                     </li>
-                    <li class="nav__menu_item  galleryLink"><a href='#gallery' class="nav__menu_link">
+                    <li class="nav__menu_item " data-target="what-we-do"><a href='#gallery' class="nav__menu_link">
                             projects
                         </a>
                     </li>
-                    <li class="nav__menu_item latestNewsLink"><a href='#latest-news' class="nav__menu_link">
+                    <li class="nav__menu_item latestNewsLink" data-target="latest-news"><a href='#latest-news' class="nav__menu_link">
                             news
                         </a>
                     </li>
-                    <li class="nav__menu_item navigationLink"><a href='#navigation' class="nav__menu_link">
+                    <li class="nav__menu_item navigationLink" data-target="navigation"><a href='#navigation' class="nav__menu_link">
                             contact
                         </a>
                     </li>
@@ -70,14 +70,14 @@
 
     <main class="main">
 
-        <section class="section head aboutUs" >
+        <section class="section head " id="head">
 
             <!-- Swiper -->
             <div class="slider-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="head__content">
-                            <picture class="head__wrap">
+                            <picture class="head__wrap" >
                                 <source media="( min-width:992px )" srcset="./img/city_desktop.jpg">
                                 <source media="( min-width:720px )" srcset="./img/city_tablet.jpg">
                                 <source media="( min-width:320px )" srcset="./img/city_phone.jpg">
@@ -192,7 +192,7 @@
             <a href="#what-we-do" class="sroll-down"><i class="fas fa-angle-down"></i></a>
         </section>
 
-        <section class="section section--whatWeDo aboutUs"  id="what-we-do">
+        <section class="section section--whatWeDo"  id="what-we-do">
             <div class="container">
                 <h2 class="title title--mb">what we do</h2>
                 <div class="row row--centered">

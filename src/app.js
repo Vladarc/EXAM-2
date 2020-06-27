@@ -2,7 +2,7 @@
 
 
 
-let  isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
 let map,marker,geocoder,infowindow;
 
 
